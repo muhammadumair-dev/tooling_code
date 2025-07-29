@@ -48,10 +48,8 @@ def get_weather(city: str) -> str:
         return f"Could not fetch weather data due to {e}"
 agent = Agent(
     name="Assistant",
-    instructions="""
-if the user asks for jokes, first call 'how_many_jokes' function, then tell that jokess with numbers.
-if the user asks for weather, call the 'get_weather' funciton with city name
-""",
+    instructions= input("Enter your instructions for the agent: "),
+    
     model=model,
     tools=[get_weather, how_many_jokes]
 
